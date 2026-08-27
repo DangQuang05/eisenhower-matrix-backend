@@ -52,4 +52,12 @@ public class Task {
     public LocalDateTime getCreatedAt() {
         return createdAt;
     }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public void setQuadrant(Integer quadrant) {
+        this.quadrant = quadrant;
+    }
 }
