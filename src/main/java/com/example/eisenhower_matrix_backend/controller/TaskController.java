@@ -21,8 +21,10 @@ public class TaskController {
     }
 
     @GetMapping
-    public ResponseEntity<List<Task>> getList() {
-        return ResponseEntity.ok(taskService.getList());
+    public ResponseEntity<List<Task>> getList(
+        @RequestParam(name = "quadrant", required = false) Integer quadrant
+    ) {
+        return ResponseEntity.ok(taskService.getList(quadrant));
     }
 
     @GetMapping("/{id}")

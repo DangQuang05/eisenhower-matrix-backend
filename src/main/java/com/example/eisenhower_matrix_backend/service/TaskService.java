@@ -17,8 +17,12 @@ public class TaskService {
         this.taskRepository = taskRepository;
     }
 
-    public List<Task> getList() {
-        return taskRepository.findAll();
+    public List<Task> getList(Integer quadrant) {
+        if (quadrant == null) {
+            return taskRepository.findAll();
+        } else {
+            return taskRepository.findByQuadrant(quadrant);
+        }
     }
 
     public Task getById(UUID id) {
